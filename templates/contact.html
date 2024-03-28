@@ -22,12 +22,13 @@
                 <p>Email: {{request.form.get('email') }}</p>
             </div>
             <div class ="col-md-6">
-               <p><a href="{{ url_for('contact') }}">Complete form again</a></p>
+               <p><a href="/contact">Complete form again</a></p>
             </div>
         </div>
 
     {% else %}
-        <form class="row g-3" action="{{ url_for('contact') }}" method="post">
+        <form class="row g-3" method="post">
+
            <div class="col-md-6">
                <label for="first_name" class="form-label">First Name</label>
                <input type="text" class="form-control" id="first_name" name="first_name" required>
