@@ -30,9 +30,12 @@ def favorite_course():
     return render_template('favorite-course.html', subject=subject, course_number=course_number)
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    if request.method == 'POST':
+        return render_template('contact.html', submitted=True)
+    else:
+        return render_template('contact.html')
 
 
 if __name__ == '__main__':
