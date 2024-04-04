@@ -46,14 +46,13 @@ def student_create():
     elif request.method == 'POST':
         first_name = request.form['first_name']
         last_name = request.form['last_name']
+        student_email = request.form['student_email']
         major_id = request.form['major_id']
         birth_date = request.form['birth_date']
-        student_email = request.form['student_email']
         is_honors = True if 'is_honors' in request.form else False
 
         student = Student(first_name=first_name, last_name=last_name, major_id=major_id,
-                          birth_date=dt.strptime(birth_date, '%Y-%m-%d'), is_honors=is_honors, student_email
-                          =student_email)
+                          birth_date=dt.strptime(birth_date, '%Y-%m-%d'), is_honors=is_honors, student_email=student_email)
         db.session.add(student)
         db.session.commit()
         flash(f'{first_name} {last_name} was successfully added!', 'success')
