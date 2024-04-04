@@ -29,6 +29,7 @@
 			<th>First Name</th>
             <th>Major</th>
             <th>Is Honors?</th>
+            <th>Email</th>
             <th>Actions</th>
         </tr>
 
@@ -38,9 +39,9 @@
             <td>{{ each_student['first_name'] }}</td>
             <td>{{ each_major['major'] }}</td>
             <td>{{ 'Yes' if each_student['is_honors'] == 1 else 'No' }}</td>
+            <td>{{ each_student['student_email']}}</td>
             <td>
                 <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Edit</a>
-                &nbsp;
                 <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Delete</a>
             </td>
         </tr>
