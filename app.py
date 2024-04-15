@@ -19,14 +19,58 @@ login_manager.login_view = 'login'  # default login route
 login_manager.init_app(app)
 
 
+# ------------------------------------------------- UNDEFINED ----------------------------------------------------------
+# MANAGER
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+
+@app.route('/product-edit')
+def product_edit():
+    return render_template("product-edit.html")
+
+
+@app.route('/custom-order')
+def custom_order():
+    return render_template("custom-orders.html")
+
+
+@app.route('/order-status')
+def order_status():
+    return render_template("order-status.html")
+
+
+@app.route('/financial-analytics')
+def financial_analytics():
+    return render_template("financial-analytics.html")
+
+
+@app.route('/product-analytics')
+def product_analytics():
+    return render_template("product-analytics.html")
+
+
+# CUSTOMER
+@app.route('/cart')
+def cart():
+    return render_template("cart-payment.html")
+
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+
+@app.route('/product')
+def product():
+    return render_template("product.html")
+
+
+# ------------------------------------------------- Log In ------------------------------------------------------------
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-
-@app.route('/')
-def home():
-    return redirect(url_for('login'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -77,6 +121,7 @@ def logout():
     return redirect(url_for('home'))
 
 
+# ------------------------------------------------- READ ------------------------------------------------------------
 @app.route('/student/view')
 @login_required
 @role_required(['ADMIN', 'MANAGER'])
@@ -86,20 +131,6 @@ def student_view_all():
         .order_by(Student.last_name, Student.first_name) \
         .all()
     return render_template('student_view_all.html', students=students)
-
-
-# add new route "/training"
-@app.route('/training')
-@login_required
-def training():
-    # identify myself "Victor Lee" as the trainer \\ initializing trainer variable by seeking through User table
-    trainer = User.query.filter_by(first_name='Victor', last_name='Lee').first()
-    # if my name is found as a user, training page opens with my first name included (Victor)
-    if trainer:
-        return render_template('training.html', first_name=trainer.first_name, email=trainer.email)
-    # if my name is not found as a user, flash error message
-    else:
-        flash('User information is not found in the database.', 'error')
 
 
 @app.route('/student/view/<int:student_id>')
@@ -119,7 +150,7 @@ def student_view(student_id):
             return redirect(url_for('student_view_all'))
 
     elif current_user.role == 'STUDENT':
-        student = Student.query.filter_by(email=current_user.email).first()
+        student = (Student.query.filter_by(email=current_user.email).first())
         majors = Major.query.order_by(Major.major) \
             .all()
 
@@ -136,9 +167,8 @@ def student_view(student_id):
         return render_template('error.html')
 
 
+# ------------------------------------------------- CREATE ------------------------------------------------------------
 @app.route('/student/create', methods=['GET', 'POST'])
-@login_required
-@role_required(['ADMIN', 'MANAGER'])
 def student_create():
     if request.method == 'GET':
         majors = Major.query.order_by(Major.major) \
@@ -159,18 +189,20 @@ def student_create():
         db.session.add(student)
         db.session.commit()
         flash(f'{first_name} {last_name} was successfully added!', 'success')
-        return redirect(url_for('student_view_all'))
+        return redirect(url_for('login'))  # redirects user to login page after creating an account
 
     # Address issue where unsupported HTTP request method is attempted
     flash(f'Invalid request. Please contact support if this problem persists.', 'error')
     return redirect(url_for('student_view_all'))
 
 
+# ------------------------------------------------- UPDATE ------------------------------------------------------------
 @app.route('/student/update/<int:student_id>', methods=['GET', 'POST'])
 @login_required
 @role_required(['ADMIN', 'MANAGER'])
 def student_edit(student_id):
     if request.method == 'GET':
+
         student = Student.query.filter_by(student_id=student_id).first()
         majors = Major.query.order_by(Major.major) \
             .order_by(Major.major) \
@@ -207,6 +239,7 @@ def student_edit(student_id):
     return redirect(url_for('student_view_all'))
 
 
+# ------------------------------------------------- DELETE ------------------------------------------------------------
 @app.route('/student/delete/<int:student_id>')
 @login_required
 @role_required(['ADMIN'])
@@ -223,6 +256,7 @@ def student_delete(student_id):
     return redirect(url_for('student_view_all'))
 
 
+# ------------------------------------------------- DEBUG ------------------------------------------------------------
 @app.route('/error')
 def error():
     # Generic error handler to handle various site errors

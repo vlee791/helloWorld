@@ -1,0 +1,381 @@
+<!-- added width and height for each picture manually, not sure why css img attribute not showing up-->
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Products
+{% endblock %}
+
+{% block page_head %}
+<link rel="stylesheet" href="/static/css/cart.css">
+Products
+{% endblock %}
+
+{% block page_content %}
+
+
+<div class="container1">
+<!-- Add products to the classic cookies section -->
+<section id="cookies-section">
+  <div class="row">
+    <!-- Add chocolate chp cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+        <img src="/static/assets/chocchipcookie.jpg" width="400" height="400" alt="Choc_Chip_Cookies">
+        <h4>Classic Chocolate Chip Cookies</h4>
+        <h5>Price per half dozen: $20</h5>
+        <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+              <label>
+              Quantity
+              <input type="number" class="form-control" placeholder="Enter Quantity">
+              </label>
+          </div>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    <!-- Add kitchen sink cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+        <img src="/static/assets/kitchensinkcookie.jpg" width="400" height="400" alt="Kitchen_Sink_Cookies">
+        <h4> Kitchen Sink Cookies</h4>
+        <h5>Price per half dozen: $20</h5>
+        <h6>Only sold in half dozens</h6>
+        <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+        </div>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add churro cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+        <img src="/static/assets/churrocookie.jpg" width="400" height="400" alt="Churro_Cookies">
+       <h4> Churro Cookies</h4>
+       <h5>Price per half dozen: $20</h5>
+       <h6>Only sold in half dozens</h6>
+        <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" width="400" height="400" placeholder="Enter Quantity">
+             </label>
+        </div>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Add lemonade cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+        <img src="/static/assets/lemonadecookie.jpg" width="400" height="400" alt="Lemonade_Cookies">
+        <h4> Lemonade Cookies</h4>
+        <h5>Price per half dozen: $20</h5>
+        <h6>Only sold in half dozens</h6>
+        <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+        </div>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add peanut butter oatmeal cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+         <img src="/static/assets/peanutoatmealcookie.jpg" width="400" height="400" alt="Peanut_Butter_Oatmeal_Cookies">
+         <h4> Peanut Butter Oatmeal Cookies</h4>
+         <h5>Price per half dozen: $20</h5>
+         <h6>Only sold in half dozens</h6>
+        <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+        </div>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add oreo cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/oreocookie.jpg" width="400" height="400"alt="Oreo_Cookies">
+          <h4> Oreo Cookies</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="container2">
+<!--  Add products to the dessert bars section -->
+<section id="dessert-bars-section">
+  <div class="row">
+    <!-- Add chocolate chip cookie bars -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/chocchipbar.jpg" width="400" height="400" alt="Choc_Chip_Bars">
+          <h4> Classic Chocolate Chip Bars</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add slutty blondie bars -->
+    <div class="col-md-4 d-flex">
+       <div class="custom-card flex-fill">
+          <img src="/static/assets/sluttyblondiebars.jpg" width="400" height="400" alt="Slutty_Blonde_Bars">
+          <h4> Slutty Blondie Bars</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+       </div>
+    </div>
+    <!-- Add smores bars -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/smoresbar.jpg" width="400" height="400" alt="Smores_Bars">
+          <h4> Smores Bars</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Add lemon bars -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/lemonbars.jpg" width="400" height="400" alt="Lemon_Bars">
+          <h4> Lemon Bars</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add oreo bars -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/oreobars.jpg" width="400" height="400" alt="Oreo_Bars">
+          <h4> Oreo Bars</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add sea salt caramel bars -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/caramelbars.jpg" width="400" height="400" alt="Sea_Salt_Caramel_Bars">
+          <h4>Sea Salt Caramel Bars </h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="container3">
+<!--  Add products to the deluxe cookies section -->
+<section id="deluxe-cookies-section">
+  <div class="row">
+    <!-- Add iced gingerbread oatmeal cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/gingerbread.jpg" width="400" height="400" alt="Iced_Gingerbread_Cookies">
+          <h4> Iced Gingerbread Oatmeal Cookies</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add muddy buddy cookies -->
+    <div class="col-md-4 d-flex">
+       <div class="custom-card flex-fill">
+           <img src="/static/assets/muddybuddy.jpg" width="400" height="400" alt="Muddy_Buddy_Cookies">
+           <h4> Muddy Buddy Cookies</h4>
+           <h5>Price per half dozen: $20</h5>
+           <h6>Only sold in half dozens</h6>
+           <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+           </div>
+           <button>Add to Cart</button>
+       </div>
+    </div>
+    <!-- Add strawberry shortcake cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/strawberryshortcake.jpg" width="400" height="400" alt="Strawberry_Shortcake_Cookies">
+          <h4> Strawberry Shortcake Cookies</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Add coffee cake cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/coffeecake.jpg" width="400" height="400" alt="Coffee_Cake_Cookies">
+          <h4> Coffee Cake Cookies</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add hot cocoa cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/hotcocoa.jpg" width="400" height="400" alt="Hot_Cocoa_Cookies">
+          <h4> Hot Cocoa Cookies</h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+    <!-- Add snowball cookies -->
+    <div class="col-md-4 d-flex">
+      <div class="custom-card flex-fill">
+          <img src="/static/assets/snowball.jpg" width="400" height="400" alt="Snowball_Cookies">
+          <h4>Snowball Cookies </h4>
+          <h5>Price per half dozen: $20</h5>
+          <h6>Only sold in half dozens</h6>
+          <div class="form-group">
+            <label>
+             Quantity
+             <input type="number" class="form-control" placeholder="Enter Quantity">
+             </label>
+          </div>
+          <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section id="custom-order-section">
+<!-- Put in fields for custom order -->
+    {% if action and action == 'create' %}
+        Custom Order Form
+    {% endif %}
+   <h3>Custom Order Form</h3>
+    <form action="submit_order.php" method="post" class="order-form">
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+        </div>
+    <!-- IDK WHAT TO PUT IN THIS ROW -->
+
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="custom_description">Custom Description:</label>
+            <input type="text" id="custom_description" name="custom_description">
+        </div>
+
+        <div class="form-group">
+            <label for="quantity"> Desired Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="allergies">Allergies (if any):</label>
+            <input type="text" id="allergies" name="allergies">
+        </div>
+
+        <div class="form-group">
+            <label for="pickup_week">Desired Pick Up Week:</label>
+            <input type="week" id="pickup_week" name="pickup_week" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Order</button>
+    </form>
+</section>
+{% endblock %}
+
+
+

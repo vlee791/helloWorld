@@ -4,6 +4,20 @@ from flask_login import UserMixin
 db = SQLAlchemy()
 
 
+class Major(db.Model):
+    __tablename__ = "major"
+
+    major_id = db.Column(db.Integer, primary_key=True)
+    major = db.Column(db.String(30), nullable=False)
+    students = db.relationship('Student', backref='students')
+
+    def __init__(self, major):
+        self.major = major
+
+    def __repr__(self):
+        return f"{self.major}"
+
+
 class Student(db.Model):
     __tablename__ = "student"
 
@@ -31,20 +45,6 @@ class Student(db.Model):
         return f"{self.first_name} {self.last_name}"
 
 
-class Major(db.Model):
-    __tablename__ = "major"
-
-    major_id = db.Column(db.Integer, primary_key=True)
-    major = db.Column(db.String(30), nullable=False)
-    students = db.relationship('Student', backref='students')
-
-    def __init__(self, major):
-        self.major = major
-
-    def __repr__(self):
-        return f"{self.major}"
-
-
 class User(UserMixin, db.Model):
     __tablename__ = "user"
 
@@ -66,7 +66,7 @@ class User(UserMixin, db.Model):
 
     # Function for flask_login manager to provider a user ID to know who is logged in
     def get_id(self):
-        return (self.user_id)
+        return self.user_id
 
     def __repr__(self):
         return f"{self.first_name} {self.last_name} ({self.username})"

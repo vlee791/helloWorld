@@ -17,15 +17,21 @@ with app.app_context():
 
     # Initial loading of users
     users = [
-        {'username': 'student', 'email': 'student@umd.edu', 'first_name':'Imma', 'last_name':'Student',
-            'password': generate_password_hash('studentpw', method='pbkdf2:sha256'), 'role':'STUDENT'},
-        {'username': 'manager', 'email': 'manager@umd.edu', 'first_name':'Joe', 'last_name':'King',
-            'password': generate_password_hash('managerpw', method='pbkdf2:sha256'), 'role':'MANAGER'},
-        {'username': 'admin', 'email': 'admin@umd.edu', 'first_name':'Crystal', 'last_name':'Ball',
-            'password': generate_password_hash('adminpw', method='pbkdf2:sha256'), 'role':'ADMIN'},
-        # added myself (Victor) as a new user with the role STUDENT
-        {'username': 'vlee791', 'email': 'vlee791@terpmail.umd.edu', 'first_name':'Victor', 'last_name':'Lee',
-            'password': generate_password_hash('vlee791', method='pbkdf2:sha256'), 'role':'STUDENT'}
+        # sample
+        # --- USER: MANAGER - Daya
+        {'username': 'admin', 'email': 'admin@umd.edu', 'first_name': 'Daya', 'last_name': 'Novich',
+         'password': generate_password_hash('adminpw', method='pbkdf2:sha256'), 'role': 'ADMIN'},
+
+        # --- USER: EMPLOYEE - TBD
+        {'username': 'manager', 'email': 'manager@umd.edu', 'first_name': 'Joe', 'last_name': 'King',
+         'password': generate_password_hash('managerpw', method='pbkdf2:sha256'), 'role': 'MANAGER'},
+
+        # --- USER: CUSTOMER
+        {'username': 'customer', 'email': 'vlee791@terpmail.umd.edu', 'first_name': 'Victor', 'last_name': 'Lee',
+         'password': generate_password_hash('customerpw', method='pbkdf2:sha256'), 'role': 'STUDENT'},
+
+        {'username': 'customer2', 'email': 'rsmi123@terpmail.umd.edu', 'first_name': 'Robert', 'last_name': 'Smith',
+         'password': generate_password_hash('customerpw2', method='pbkdf2:sha256'), 'role': 'STUDENT'}
     ]
 
     for each_user in users:
@@ -34,5 +40,3 @@ with app.app_context():
                       last_name=each_user["last_name"], password=each_user["password"], role=each_user["role"])
         db.session.add(a_user)
         db.session.commit()
-
-
